@@ -1,5 +1,5 @@
 /* ==========================================================
-   Ayan Mandal portfolio: interactions
+   Kuro portfolio: interactions
    ========================================================== */
 (function () {
   "use strict";
@@ -96,7 +96,7 @@
   var scripts = {
     teacher: [
       ["cmd", "whoami"],
-      ["out", "Ayan Mandal, Computer Science teacher"],
+      ["out", "Kuro, Computer Science teacher"],
       ["cmd", "cat experience.txt"],
       ["out", "5+ years teaching maths, science and computers\nCo-founder, Ganitasastram\nBilingual notes: English + Bengali"],
       ["cmd", "ls favourites/"],
@@ -212,23 +212,36 @@
     });
   }
 
-  /* ---------- Live clocks (nav chip + ticker) ---------- */
-  var clockEls = document.querySelectorAll("[data-tz]");
-  var fmtCache = {};
-  function fmtFor(tz) {
-    if (!fmtCache[tz]) {
-      fmtCache[tz] = new Intl.DateTimeFormat("en-GB", { timeZone: tz, hour: "2-digit", minute: "2-digit", hour12: false });
+  /* ---------- Skills marquee: fill the screen, loop with no gap ---------- */
+  var skillsRow = document.getElementById("skillsRow");
+  var skillsOriginal = skillsRow ? skillsRow.innerHTML : "";
+  function buildMarquee() {
+    if (!skillsRow) return;
+    skillsRow.innerHTML = skillsOriginal;
+    var setWidth = skillsRow.scrollWidth;
+    if (!setWidth) return;
+    // each half of the track must be at least as wide as the screen
+    var perHalf = Math.max(1, Math.ceil(window.innerWidth / setWidth));
+    var extra = perHalf * 2 - 1;
+    for (var i = 0; i < extra; i++) {
+      var tmp = document.createElement("div");
+      tmp.innerHTML = skillsOriginal;
+      while (tmp.firstChild) {
+        var node = tmp.firstChild;
+        if (node.nodeType === 1) node.setAttribute("aria-hidden", "true");
+        skillsRow.appendChild(node);
+      }
     }
-    return fmtCache[tz];
+    // keep the scroll speed steady (about 55px per second) at any width
+    skillsRow.style.animationDuration = Math.round((setWidth * perHalf) / 55) + "s";
   }
-  function tickClocks() {
-    var now = new Date();
-    clockEls.forEach(function (el) {
-      try { el.textContent = fmtFor(el.getAttribute("data-tz")).format(now); } catch (e) { /* ignore */ }
-    });
-  }
-  tickClocks();
-  setInterval(tickClocks, 15000);
+  buildMarquee();
+  window.addEventListener("load", buildMarquee);
+  var resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(buildMarquee, 200);
+  });
 
   /* ---------- Project carousel: arrows, counter, keyboard ---------- */
   var track = document.getElementById("projectGrid");
