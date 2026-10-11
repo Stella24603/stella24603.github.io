@@ -212,37 +212,6 @@
     });
   }
 
-  /* ---------- Skills marquee: fill the screen, loop with no gap ---------- */
-  var skillsRow = document.getElementById("skillsRow");
-  var skillsOriginal = skillsRow ? skillsRow.innerHTML : "";
-  function buildMarquee() {
-    if (!skillsRow) return;
-    skillsRow.innerHTML = skillsOriginal;
-    var setWidth = skillsRow.scrollWidth;
-    if (!setWidth) return;
-    // each half of the track must be at least as wide as the screen
-    var perHalf = Math.max(1, Math.ceil(window.innerWidth / setWidth));
-    var extra = perHalf * 2 - 1;
-    for (var i = 0; i < extra; i++) {
-      var tmp = document.createElement("div");
-      tmp.innerHTML = skillsOriginal;
-      while (tmp.firstChild) {
-        var node = tmp.firstChild;
-        if (node.nodeType === 1) node.setAttribute("aria-hidden", "true");
-        skillsRow.appendChild(node);
-      }
-    }
-    // keep the scroll speed steady (about 55px per second) at any width
-    skillsRow.style.animationDuration = Math.round((setWidth * perHalf) / 55) + "s";
-  }
-  buildMarquee();
-  window.addEventListener("load", buildMarquee);
-  var resizeTimer;
-  window.addEventListener("resize", function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(buildMarquee, 200);
-  });
-
   /* ---------- Project carousel: arrows, counter, keyboard ---------- */
   var track = document.getElementById("projectGrid");
   var prevBtn = document.getElementById("carPrev");
