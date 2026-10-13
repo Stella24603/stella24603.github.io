@@ -3,303 +3,420 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kuro | Educator &amp; Developer</title>
-  <meta name="description" content="Kuro: Computer Science educator, co-founder of Ganitasastram, and Data Science student at IIT Madras. Projects, skills and teaching.">
-  <meta name="theme-color" content="#f6f1e9">
+  <title>Ayan "Kuro" Mandal | Web developer, Data Science student, CS educator</title>
+  <meta name="description" content="Web developer and computer science educator building with AI. Co-founder at Ganitasastram, BS Data Science student at IIT Madras.">
+  <meta name="theme-color" content="#f6f5f1">
+  <link rel="canonical" href="https://stella24603.github.io/">
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-  <meta property="og:title" content="Kuro | Educator &amp; Developer">
-  <meta property="og:description" content="Computer Science educator building apps and learning content. Data Science student at IIT Madras.">
+  <meta property="og:title" content="Ayan &quot;Kuro&quot; Mandal | Web developer, Data Science student, CS educator">
+  <meta property="og:description" content="I teach logic and build with AI. Web developer, Data Science student at IIT Madras, co-founder at Ganitasastram.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:url" content="https://stella24603.github.io/">
+  <meta property="og:image" content="https://stella24603.github.io/assets/logo.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-tight-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
 
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ayan Mandal",
+    "alternateName": "Kuro",
+    "url": "https://stella24603.github.io/",
+    "jobTitle": "Web developer and computer science educator",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Kalyani Mahavidyalaya" },
+      { "@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Madras" }
+    ],
+    "worksFor": { "@type": "Organization", "name": "Ganitasastram", "url": "https://www.ganitasastram.com" },
+    "sameAs": [
+      "https://www.linkedin.com/in/ayan-mandal-cs/",
+      "https://github.com/Stella24603",
+      "https://www.youtube.com/@TheLogicRoom-0b1b",
+      "https://www.instagram.com/thelogicroom_"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- NAV -->
-  <header class="nav-wrap">
-    <nav class="nav" aria-label="Main">
-      <a class="brand" href="#top" aria-label="Kuro, home">
-        <img src="assets/logo.png" alt="" width="32" height="32">
-        <span>Kuro</span>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Ayan Kuro Mandal, home">
+        <span class="monogram" aria-hidden="true">AK</span>
+        <span>Ayan Mandal</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#channel">The Logic Room</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        </button>
-        <a class="btn btn-dark btn-sm" href="https://www.linkedin.com/in/ayan-mandal-254665279/" target="_blank" rel="noopener">Connect</a>
-      </div>
-    </nav>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#ai">How I build</a>
+        <a href="#journey">Journey</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#logic-room">The Logic Room</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-sm btn-primary nav-cta" href="#contact">Get in touch</a>
+    </div>
   </header>
 
-  <main id="top">
+  <main id="main">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="glow" id="glow" aria-hidden="true"></div>
-      <p class="eyebrow reveal">Educator · Builder · Data Science student</p>
-      <h1 class="reveal">Teach clearly. <br><em>Build</em> what's useful.</h1>
-      <p class="lead reveal">I'm Kuro, a Computer Science teacher with 5+ years in the classroom. I co-founded an institute, build apps for it, and I'm studying Data Science at IIT Madras.</p>
-      <div class="cta-row reveal">
-        <a class="btn btn-accent" href="https://www.ganitasastram.com/team/ayan-mandal" target="_blank" rel="noopener">Enquire about classes ↗</a>
-        <a class="btn btn-ghost" href="#projects">See my work</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ayan-mandal-254665279/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a class="btn btn-ghost" href="https://github.com/Stella24603" target="_blank" rel="noopener">GitHub ↗</a>
+    <!-- 1. HERO -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="corner-info mono">
+          <span class="badge">Open to opportunities</span>
+          <span id="localtime" aria-label="Local time in India">Kolkata, India (IST)</span>
+        </div>
+
+        <div class="hero-name">
+          <span class="monogram" aria-hidden="true">AK</span>
+          <h1>Ayan &ldquo;Kuro&rdquo; Mandal</h1>
+        </div>
+        <p class="hero-line">I teach logic and <em>build with AI.</em></p>
+        <p class="hero-caption mono">Web developer · Data Science student (IIT Madras) · CS educator</p>
+        <p class="hero-intro">I build web apps for classrooms and teach computer science to school students. I co-founded Ganitasastram, and I&rsquo;m studying Data Science at IIT Madras.</p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Get in touch</a>
+          <a class="btn" href="#work">See work</a>
+          <a class="link-quiet" href="https://www.ganitasastram.com/team/ayan-mandal" target="_blank" rel="noopener">Classes at Ganitasastram ↗</a>
+        </div>
       </div>
 
-      <!-- interactive terminal demo -->
-      <div class="demo reveal" id="demo">
-        <div class="demo-bar">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <span class="demo-title">kuro@portfolio ~ </span>
+      <!-- notebook doodle: logic gate into a flowchart box -->
+      <svg class="hero-doodle" viewBox="0 0 300 200" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M20 60h50M20 100h50"/>
+        <path d="M70 40h30a40 40 0 0 1 0 80H70z"/>
+        <path d="M140 80h40"/>
+        <rect x="180" y="55" width="90" height="50" rx="4"/>
+        <path d="M225 105v30"/>
+        <path d="M225 135l-8-10M225 135l8-10"/>
+        <text x="204" y="85" font-family="JetBrains Mono, monospace" font-size="11" fill="currentColor" stroke="none">true</text>
+        <text x="28" y="54" font-family="JetBrains Mono, monospace" font-size="10" fill="currentColor" stroke="none">A</text>
+        <text x="28" y="94" font-family="JetBrains Mono, monospace" font-size="10" fill="currentColor" stroke="none">B</text>
+      </svg>
+    </section>
+
+    <!-- 2. SELECTED WORK -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="mono"><b>01</b> Selected work</p>
+          <h2>Things I&rsquo;ve built and taught.</h2>
         </div>
-        <div class="demo-tabs" role="tablist" aria-label="Choose a role">
-          <button role="tab" class="chip active" data-role="teacher" aria-selected="true">Teacher</button>
-          <button role="tab" class="chip" data-role="builder" aria-selected="false">Builder</button>
-          <button role="tab" class="chip" data-role="learner" aria-selected="false">Learner</button>
+
+        <div class="work-list">
+          <a class="work-row" href="work/classroom-app.html">
+            <p class="mono">Web</p>
+            <div>
+              <h3>Classroom Management App</h3>
+              <p class="tag" style="margin-top:8px;display:inline-block">Private</p>
+            </div>
+            <div class="meta">
+              <p><b>Role</b>Designer and developer</p>
+              <p><b>Stack</b>React, Firebase</p>
+              <p><b>Outcome</b>Every teacher on the team runs their batches with it: 15 to 20 batches and 100+ students per teacher.</p>
+            </div>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="work-row" href="work/ganitasastram-website.html">
+            <p class="mono">Web</p>
+            <div><h3>Ganitasastram Website Redesign</h3></div>
+            <div class="meta">
+              <p><b>Role</b>Co-founder, designer and developer</p>
+              <p><b>Stack</b>Wix, Velo</p>
+              <p><b>Outcome</b>Ongoing redesign of the institute&rsquo;s live site, with a proper structure and a consistent design system, focused on admissions and student results.</p>
+            </div>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="work-row" href="work/question-banks.html">
+            <p class="mono">Teaching</p>
+            <div><h3>Practice Question Banks</h3></div>
+            <div class="meta">
+              <p><b>Role</b>Author</p>
+              <p><b>Stack</b>Python, C and SQL content; Word and Markdown</p>
+              <p><b>Outcome</b>Question banks, study notes, practice sets and exam sets for my batches, from full-syllabus coverage to one student&rsquo;s weak spots.</p>
+            </div>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="work-row" href="work/logic-room.html">
+            <p class="mono">Teaching</p>
+            <div><h3>The Logic Room</h3></div>
+            <div class="meta">
+              <p><b>Role</b>Founder, host and editor</p>
+              <p><b>Stack</b>YouTube, Instagram</p>
+              <p><b>Outcome</b>My own channel for computer science lessons and exam solutions.</p>
+            </div>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
         </div>
-        <pre class="demo-screen" id="demoScreen" aria-live="polite"></pre>
+
+        <p class="work-more"><span>Also:</span> <strong>Student Learning App</strong> <span class="tag">In progress</span> <span>planned for a much larger group of students than the classroom app.</span></p>
       </div>
     </section>
 
-    <!-- SKILL MARQUEE -->
-    <section class="marquee" aria-label="Skills">
-      <p class="marquee-label">Tools &amp; topics I work with</p>
-      <div class="marquee-track">
-        <div class="marquee-row"><span>Python</span><span>C</span><span>C++</span><span>Java</span><span>SQL</span><span>React</span><span>Firebase</span><span>Wix Velo</span><span>Statistics</span><span>Curriculum design</span><span>Bilingual content</span><span>Python</span><span>C</span><span>C++</span><span>Java</span><span>SQL</span><span>React</span><span>Firebase</span><span>Wix Velo</span><span>Statistics</span><span>Curriculum design</span><span>Bilingual content</span><span>Python</span><span>C</span><span>C++</span><span>Java</span><span>SQL</span><span>React</span><span>Firebase</span><span>Wix Velo</span><span>Statistics</span><span>Curriculum design</span><span>Bilingual content</span></div>
-        <div class="marquee-row" aria-hidden="true"><span>Python</span><span>C</span><span>C++</span><span>Java</span><span>SQL</span><span>React</span><span>Firebase</span><span>Wix Velo</span><span>Statistics</span><span>Curriculum design</span><span>Bilingual content</span><span>Python</span><span>C</span><span>C++</span><span>Java</span><span>SQL</span><span>React</span><span>Firebase</span><span>Wix Velo</span><span>Statistics</span><span>Curriculum design</span><span>Bilingual content</span><span>Python</span><span>C</span><span>C++</span><span>Java</span><span>SQL</span><span>React</span><span>Firebase</span><span>Wix Velo</span><span>Statistics</span><span>Curriculum design</span><span>Bilingual content</span></div>
+    <!-- 3. HOW I BUILD WITH AI -->
+    <section class="section" id="ai">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="mono"><b>02</b> Process</p>
+          <h2>How I build with AI</h2>
+        </div>
+        <p class="manifesto">I bring the problem, the context and the resources. AI restructures them and drafts the files. I decide what goes in, check every output, and test it before anyone else uses it.</p>
+        <ol class="steps">
+          <li>
+            <h3>Define the problem</h3>
+            <p>I write down what the thing must do and who uses it, and gather the real context: requirements, reference material, constraints.</p>
+          </li>
+          <li>
+            <h3>Pair with AI</h3>
+            <p>AI proposes a better structure and drafts the code or content files from what I supplied. I stay in the loop at every step.</p>
+          </li>
+          <li>
+            <h3>Review and test</h3>
+            <p>I read every output, fix what&rsquo;s wrong, and test it on real cases before it reaches students or teachers.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats" aria-label="Highlights">
-      <div class="stat reveal"><b data-count="5" data-suffix="+">0</b><span>years teaching</span></div>
-      <div class="stat reveal"><b data-count="100" data-suffix="+">0</b><span>students taught this year</span></div>
-      <div class="stat reveal"><b data-count="1">0</b><span>app in use across the institute</span></div>
-      <div class="stat reveal"><b data-count="2">0</b><span>languages: English &amp; Bengali</span></div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <p class="eyebrow reveal"><span class="num">01</span> About</p>
-      <h2 class="reveal">From tutor to <em>co-founder.</em></h2>
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p>I started as a freelance tutor, teaching mathematics, science and computer subjects to school students. Today I teach Computer Science and Application at <a href="https://www.ganitasastram.com" target="_blank" rel="noopener">Ganitasastram</a>, the institute I co-founded and help run, including its website, events and digital content.</p>
-          <p>Teaching showed me what students actually struggle with. So I build things to fix it: a classroom management app for batches, attendance, tests and fees, practice material in Python, C and SQL, and lessons on my YouTube channel.</p>
-          <p>Next, I'm going deeper into data science and AI to become a stronger developer and a better teacher.</p>
-        </div>
-        <div class="about-cards">
-          <article class="mini reveal">
-            <h3>Teaching</h3>
-            <p>Computer Science and Application, taught in batches with bilingual material.</p>
-          </article>
-          <article class="mini reveal">
-            <h3>Building</h3>
-            <p>React and Firebase web apps for classroom operations.</p>
-          </article>
-          <article class="mini reveal">
-            <h3>Studying</h3>
-            <p>BS in Data Science, IIT Madras. Statistics, maths and computational thinking.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <p class="eyebrow reveal"><span class="num">02</span> Selected work</p>
-      <h2 class="reveal">Things I've <em>made.</em></h2>
-
-      <div class="toolbar reveal">
-        <div class="filters" role="group" aria-label="Filter projects">
-          <button class="chip active" data-filter="all">All</button>
-          <button class="chip" data-filter="apps">Apps</button>
-          <button class="chip" data-filter="teaching">Teaching</button>
-          <button class="chip" data-filter="content">Content</button>
-        </div>
-        <div class="carousel-ctrl">
-          <span class="car-count" id="carCount" aria-live="polite"></span>
-          <button class="icon-btn" id="carPrev" aria-label="Previous projects">←</button>
-          <button class="icon-btn" id="carNext" aria-label="Next projects">→</button>
-        </div>
-      </div>
-
-      <div class="project-grid" id="projectGrid" tabindex="0" aria-label="Projects, scroll sideways">
-        <article class="project tilt" data-cat="apps">
-          <div class="project-top">
-            <span class="badge">App</span>
-            <span class="status">Live · private</span>
-          </div>
-          <h3>Classroom Management App</h3>
-          <p>A web app for running an institute: batches, students, attendance, tests and fees, used by the teachers at the institute.</p>
-          <ul class="tags"><li>React</li><li>Firebase</li></ul>
-          <p class="note">Private, since it holds student data. Happy to walk through it.</p>
-        </article>
-
-        <article class="project tilt" data-cat="apps">
-          <div class="project-top">
-            <span class="badge">App</span>
-            <span class="status soft">In progress</span>
-          </div>
-          <h3>Student Learning App</h3>
-          <p>A student-facing app with notes, practice quizzes and a progress profile for grades and attendance.</p>
-          <ul class="tags"><li>Planning</li><li>Quizzes</li></ul>
-        </article>
-
-        <article class="project tilt" data-cat="apps">
-          <div class="project-top">
-            <span class="badge">Web</span>
-            <span class="status">Live</span>
-          </div>
-          <h3>Ganitasastram Website</h3>
-          <p>The institute's website, managed and being redesigned with a focus on admissions and student results.</p>
-          <ul class="tags"><li>Wix</li><li>Velo</li></ul>
-          <a class="card-link" href="https://www.ganitasastram.com" target="_blank" rel="noopener">Visit site ↗</a>
-        </article>
-
-        <article class="project tilt" data-cat="teaching">
-          <div class="project-top">
-            <span class="badge">Teaching</span>
-            <span class="status">Used in class</span>
-          </div>
-          <h3>Practice Question Banks</h3>
-          <p>Graded practice sets and study guides for Python, C and SQL, written for school students.</p>
-          <ul class="tags"><li>Python</li><li>C</li><li>SQL</li></ul>
-        </article>
-
-        <article class="project tilt" data-cat="content">
-          <div class="project-top">
-            <span class="badge">Content</span>
-            <span class="status">Active</span>
-          </div>
-          <h3>The Logic Room</h3>
-          <p>My YouTube channel and Instagram page, with computer science lessons and exam solutions.</p>
-          <ul class="tags"><li>YouTube</li><li>Instagram</li></ul>
-          <a class="card-link" href="https://www.youtube.com/@TheLogicRoom-0b1b" target="_blank" rel="noopener">Watch ↗</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- JOURNEY -->
+    <!-- 4. JOURNEY AND CERTIFICATIONS -->
     <section class="section" id="journey">
-      <p class="eyebrow reveal"><span class="num">03</span> Journey</p>
-      <h2 class="reveal">Where I've been, <em>and where I'm headed.</em></h2>
+      <div class="wrap">
+        <div class="section-head">
+          <p class="mono"><b>03</b> Journey</p>
+          <h2>Where I&rsquo;ve been, and where I&rsquo;m headed.</h2>
+        </div>
 
-      <ol class="timeline">
-        <li class="reveal">
-          <time>Oct 2026 – present</time>
-          <h3>BS in Data Science · IIT Madras (online)</h3>
-          <p>Statistics, computational thinking, mathematics and English, with more data science focus in later semesters.</p>
-        </li>
-        <li class="reveal">
-          <time>Apr 2024 – present</time>
-          <h3>Co-founder &amp; Computer Science Teacher · Ganitasastram</h3>
-          <p>Teaching Computer Science and Application, managing the website and events, and designing digital content.</p>
-        </li>
-        <li class="reveal">
-          <time>2022 – 2025</time>
-          <h3>B.Sc. (Honours) in Computer Science · Kalyani University</h3>
-          <p>Three-year honours degree in Computer Science.</p>
-        </li>
-        <li class="reveal">
-          <time>Before 2024</time>
-          <h3>Freelance tutor</h3>
-          <p>Taught mathematics, science and computer subjects to school students.</p>
-        </li>
-        <li class="reveal">
-          <time>2024 – 2026</time>
-          <h3>Always learning</h3>
-          <p>Python course (GeeksforGeeks), plus AI masterclass and webinars (Outskill, Springpad).</p>
-        </li>
-      </ol>
-    </section>
+        <ol class="timeline narrow">
+          <li>
+            <time class="mono">Oct 2026 – present</time>
+            <h3>BS in Data Science · IIT Madras (online)</h3>
+            <p>Statistics, computational thinking, mathematics and English, with more data science focus in later semesters.</p>
+          </li>
+          <li>
+            <time class="mono">Apr 2024 – present</time>
+            <h3>Co-founder &amp; Computer Science teacher · Ganitasastram</h3>
+            <p>Teaching Computer Science and Application, and helping run the institute, including its website, events and digital content.</p>
+          </li>
+          <li>
+            <time class="mono">2022 – 2025</time>
+            <h3>B.Sc. (Honours) Computer Science · Kalyani Mahavidyalaya</h3>
+            <p>Three-year honours degree in Computer Science.</p>
+          </li>
+          <li>
+            <time class="mono">Before 2024</time>
+            <h3>Freelance tutor</h3>
+            <p>Taught mathematics, science and computer subjects to school students.</p>
+          </li>
+        </ol>
 
-    <!-- CHANNEL -->
-    <section class="section" id="channel">
-      <div class="channel reveal">
-        <img src="assets/logo.png" alt="The Logic Room logo" width="120" height="120" class="channel-logo">
-        <div>
-          <p class="eyebrow"><span class="num">04</span> Content</p>
-          <h2>The <em>Logic Room</em></h2>
-          <p>Computer science lessons and exam solutions, explained step by step. New videos are on the way.</p>
-          <div class="cta-row">
-            <a class="btn btn-accent" href="https://www.youtube.com/@TheLogicRoom-0b1b" target="_blank" rel="noopener">Watch on YouTube</a>
-            <a class="btn btn-light" href="https://www.instagram.com/thelogicroom_" target="_blank" rel="noopener">Follow on Instagram</a>
+        <h3 class="subhead">Certifications</h3>
+        <div class="certs">
+          <div class="cert">
+            <strong>AI Tools &amp; Claude Workshop</strong>
+            <span>be10x</span>
+            <span>10 Oct 2026</span>
+            <a href="https://certx.in/certificate/0270772f-3809-4400-b29b-1e1c61cd09971851660" target="_blank" rel="noopener">Verify ↗</a>
+          </div>
+          <div class="cert">
+            <strong>AI Training (1-day)</strong>
+            <span>Outskill</span>
+            <span>6 Oct 2026</span>
+            <span></span>
+          </div>
+          <div class="cert">
+            <strong>Stock Market Using AI Workshop</strong>
+            <span>SpringPad</span>
+            <span>27 Sep 2026</span>
+            <a href="https://certx.in/certificate/7c0fb9e8-cf47-448b-bce3-5e0863a834341805552" target="_blank" rel="noopener">Verify ↗</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <p class="eyebrow reveal"><span class="num">05</span> FAQ</p>
-      <h2 class="reveal">Good <em>questions.</em></h2>
-      <div class="faq reveal">
-        <details>
-          <summary>What kind of roles are you looking for?</summary>
-          <p>I'm open to computer-related roles: teaching, software development, web development and data analysis. I like work where I can build things and explain them clearly.</p>
-        </details>
-        <details>
-          <summary>What's your technical background?</summary>
-          <p>B.Sc. (Honours) in Computer Science, working knowledge of Python, C, C++, Java and SQL, and hands-on experience with React, Firebase and Wix Velo. I'm now studying Data Science at IIT Madras.</p>
-        </details>
-        <details>
-          <summary>Can I see the classroom app?</summary>
-          <p>It holds real student data, so the code isn't public. I'm glad to demo it or discuss how it works. Reach out on LinkedIn.</p>
-        </details>
-        <details>
-          <summary>What languages do you teach in?</summary>
-          <p>English and Bengali. I make bilingual practice material for students.</p>
-        </details>
-        <details>
-          <summary>How do I get in touch?</summary>
-          <p>LinkedIn is the best way: <a href="https://www.linkedin.com/in/ayan-mandal-254665279/" target="_blank" rel="noopener">my LinkedIn profile</a>.</p>
-        </details>
+    <!-- 5. TEACHING -->
+    <section class="section" id="teaching">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="mono"><b>04</b> Teaching</p>
+          <h2>Clear explanations, built for school students.</h2>
+        </div>
+
+        <dl class="facts">
+          <div><dt class="mono">Experience</dt><dd>5+ years of teaching</dd></div>
+          <div><dt class="mono">Classes</dt><dd>5 to 12</dd></div>
+          <div><dt class="mono">Boards</dt><dd>WBCHSE, CBSE and ICSE</dd></div>
+          <div><dt class="mono">Languages</dt><dd>English and Bengali material</dd></div>
+          <div><dt class="mono">Also</dt><dd>Private coding sessions</dd></div>
+        </dl>
+
+        <div class="cards">
+          <article class="card">
+            <span class="tag">Sample · question bank</span>
+            <h3>Practice question banks</h3>
+            <p>A short excerpt page will go here once the sample is ready. No student names, ever.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Sample · study guide</span>
+            <h3>Pattern printing with loops</h3>
+            <p>A step-by-step C study guide for newcomers, built around the rows-and-columns model.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- FINAL CTA -->
-    <section class="final">
-      <div class="final-card reveal">
-        <h2>Let's build, teach, <em>or just talk.</em></h2>
-        <p>I'm always glad to connect with people working in education, software and data.</p>
-        <div class="cta-row center">
-          <a class="btn btn-accent" href="https://www.linkedin.com/in/ayan-mandal-254665279/" target="_blank" rel="noopener">Connect on LinkedIn</a>
-          <a class="btn btn-light" href="https://github.com/Stella24603" target="_blank" rel="noopener">See GitHub</a>
+    <!-- 6. THE LOGIC ROOM -->
+    <section class="section" id="logic-room">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="mono"><b>05</b> The Logic Room</p>
+          <h2>Computer science, explained step by step.</h2>
         </div>
+
+        <div class="lr-grid">
+          <a class="lr-card lr-main" href="https://youtu.be/U9DQnI8sbac" target="_blank" rel="noopener">
+            <div class="lr-thumb" aria-hidden="true"><span class="mono">▶ Video</span></div>
+            <h3>HS 2026 Semester 3 Computer Science (COMS) Answer Key | সব প্রশ্নের ব্যাখ্যা সহ</h3>
+            <p class="mono">YouTube · Video</p>
+          </a>
+          <a class="lr-card short" href="https://www.youtube.com/shorts/nOTmnzfx0fc" target="_blank" rel="noopener">
+            <div class="lr-thumb" aria-hidden="true"><span class="mono">▶ Short</span></div>
+            <h3>HS Sem 3 Computer Science 2026 Solutions - Detailed Solutions Coming Soon!</h3>
+            <p class="mono">YouTube · Short</p>
+          </a>
+          <a class="lr-card short" href="https://www.youtube.com/shorts/epd1Qi4dSsM" target="_blank" rel="noopener">
+            <div class="lr-thumb" aria-hidden="true"><span class="mono">▶ Short</span></div>
+            <h3>HS Sem 3 2026 Computer Application Solutions</h3>
+            <p class="mono">YouTube · Short</p>
+          </a>
+        </div>
+
+        <p class="lr-links">
+          <a class="btn btn-sm" href="https://www.youtube.com/@TheLogicRoom-0b1b" target="_blank" rel="noopener">YouTube channel ↗</a>
+          <a class="btn btn-sm" href="https://www.instagram.com/thelogicroom_" target="_blank" rel="noopener">Instagram ↗</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="mono"><b>06</b> FAQ</p>
+          <h2>Good questions.</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>What kind of roles are you looking for?</summary>
+            <p>Open to computer-related roles: web development, data analysis and teaching. I like work where I build things and explain them clearly.</p>
+          </details>
+          <details>
+            <summary>What&rsquo;s your technical background?</summary>
+            <p>B.Sc. (Honours) in Computer Science; Python, C, C++, Java, SQL; React, Firebase and Wix Velo. Studying Data Science at IIT Madras.</p>
+          </details>
+          <details>
+            <summary>Can I see the classroom app?</summary>
+            <p>It holds real student data, so it isn&rsquo;t public. I&rsquo;m glad to walk you through it on a call.</p>
+          </details>
+          <details>
+            <summary>What languages do you teach in?</summary>
+            <p>English and Bengali.</p>
+          </details>
+          <details>
+            <summary>How do I get in touch?</summary>
+            <p>Use the form on this page or message me on <a href="https://www.linkedin.com/in/ayan-mandal-cs/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. GET IN TOUCH -->
+    <section class="section" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="section-head">
+            <p class="mono"><b>07</b> Contact</p>
+            <h2>Get in touch</h2>
+            <p class="hero-intro" style="margin-top:0">I read every message. Your details are only used to reply to you.</p>
+          </div>
+
+          <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- TODO (Phase 3): replace with the real Web3Forms access key. It is public by design. -->
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="New message from the portfolio site">
+            <input type="hidden" name="from_name" value="Portfolio contact form">
+            <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">Contact number <span class="opt">(optional)</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="f-topic">What would you like to talk about?</label>
+              <select id="f-topic" name="topic" required>
+                <option>Web development</option>
+                <option>Data analysis</option>
+                <option>Teaching</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-message">Message</label>
+              <textarea id="f-message" name="message" required></textarea>
+            </div>
+            <div>
+              <button class="btn btn-primary" type="submit">Send message</button>
+            </div>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <aside class="contact-side">
+          <p class="mono">Elsewhere</p>
+          <a class="btn" href="https://www.linkedin.com/in/ayan-mandal-cs/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn" href="https://github.com/Stella24603" target="_blank" rel="noopener">GitHub ↗</a>
+        </aside>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <a class="brand" href="#top"><img src="assets/logo.png" alt="" width="28" height="28"><span>Kuro</span></a>
+  <!-- 9. COLOPHON / FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="colophon">
+        <p class="mono">Colophon</p>
+        <p>Built with plain HTML, CSS and JavaScript, hosted on GitHub Pages, designed and written with help from AI. <a href="https://github.com/Stella24603/stella24603.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+      </div>
       <div class="footer-links">
-        <a href="https://www.linkedin.com/in/ayan-mandal-254665279/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/ayan-mandal-cs/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/Stella24603" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.youtube.com/@TheLogicRoom-0b1b" target="_blank" rel="noopener">YouTube</a>
         <a href="https://www.instagram.com/thelogicroom_" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.ganitasastram.com" target="_blank" rel="noopener">Ganitasastram</a>
       </div>
-      <p>© <span id="year">2026</span> Kuro</p>
     </div>
+    <p class="wrap copyright mono">© <span id="year">2026</span> Ayan &ldquo;Kuro&rdquo; Mandal</p>
   </footer>
 
-  <script src="js/main.js?v=4"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
