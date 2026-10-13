@@ -182,7 +182,44 @@
 .cs-note { border-left: 2px solid var(--accent); padding-left: 16px; color: var(--muted); font-size: var(--fs-small); margin-top: 20px; }
 .cs-next { border-top: 1px solid var(--hairline-strong); padding-block: 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
 
-/* ---------- motion (Phase 4 adds rules here) ---------- */
+/* ---------- motion (Phase 4) ---------- */
+/* Hover on work rows: small nudge, pointer devices only. Touch devices see the outcome text already. */
+@media (hover: hover) {
+  .work-row { transition: background-color .2s; }
+  .work-row:hover { background-color: var(--paper-2); }
+  .work-row h3 { transition: transform .2s, color .15s; }
+  .work-row:hover h3 { transform: translateX(6px); }
+}
+
+/* Masked line reveal: each word sits in a clip box, the inner span slides up */
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .14em; margin-bottom: -.14em; }
+.wi { display: inline-block; will-change: transform; }
+
+/* Only when motion is allowed (head script sets html.js-motion): start hidden, JS reveals.
+   Fail-open: if the script never takes over, everything shows after 2.5s. */
+.js-motion :is(.hero-line, .section-head h2, .cs-hero h1, .work-row, .work-more, .steps li, .timeline li, .cert, .facts div, .card, .lr-card, .lr-links, .faq details, .contact-grid .form, .contact-side, .cs-body section) { opacity: 0; }
+.js-motion:not(.js-ready) :is(.hero-line, .section-head h2, .cs-hero h1, .work-row, .work-more, .steps li, .timeline li, .cert, .facts div, .card, .lr-card, .lr-links, .faq details, .contact-grid .form, .contact-side, .cs-body section) { animation: fail-open .01s 2.5s forwards; }
+@keyframes fail-open { to { opacity: 1; } }
+
+/* ---------- jump bar ---------- */
+.jump-btn { order: 2; gap: 6px; }
+.jump-btn kbd { font-family: var(--font-mono); font-size: .72rem; border: 1px solid var(--hairline-strong); border-radius: 3px; padding: 0 5px; color: var(--muted); }
+.jump { border: 1px solid var(--ink); border-radius: var(--radius); padding: 0; background: var(--paper); color: var(--ink); width: min(560px, calc(100vw - 32px)); margin: 12vh auto 0; }
+.jump::backdrop { background: rgba(18, 18, 18, .35); }
+.jump-inner { padding: 16px; display: grid; gap: 12px; }
+.jump-row { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: .95rem; border-bottom: 1px solid var(--hairline-strong); padding-bottom: 12px; }
+.jump-prompt { color: var(--accent); white-space: nowrap; }
+.jump-input { flex: 1; min-width: 0; border: 0; background: transparent; font: inherit; color: var(--ink); padding: 4px 0; }
+.jump-input:focus { outline: none; }
+.jump-row:focus-within { border-bottom-color: var(--accent); }
+.jump-list { display: grid; }
+.jump-item { display: flex; justify-content: space-between; gap: 16px; width: 100%; text-align: left; background: transparent; border: 0; border-radius: 3px; padding: 10px 8px; cursor: pointer; font: inherit; color: var(--ink); }
+.jump-item:hover, .jump-item:focus-visible { background: var(--paper-2); }
+.jump-cmd { font-family: var(--font-mono); font-size: .9rem; }
+.jump-desc { color: var(--muted); font-size: var(--fs-small); }
+.jump-status { min-height: 1.3em; text-transform: none; letter-spacing: 0; color: #a12a2a; }
+.jump-hint { text-transform: none; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
