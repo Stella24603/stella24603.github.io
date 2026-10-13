@@ -352,8 +352,8 @@
           </div>
 
           <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <!-- TODO (Phase 3): replace with the real Web3Forms access key. It is public by design. -->
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <!-- Web3Forms access key: public by design; the destination email lives in the Web3Forms account, not here. -->
+            <input type="hidden" name="access_key" value="27b737c2-d21d-4a2e-8c43-ff262a069c63">
             <input type="hidden" name="subject" value="New message from the portfolio site">
             <input type="hidden" name="from_name" value="Portfolio contact form">
             <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -418,5 +418,6 @@
   </footer>
 
   <script src="js/main.js" defer></script>
+  <script src="js/contact.js" defer></script>
 </body>
 </html>
