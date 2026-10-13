@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to trace a for loop, line by line | Ayan "Kuro" Mandal</title>
+  <meta name="description" content="A calm way to get the right output on exam questions: trace the loop on paper, one row per pass, using a small Python example.">
+  <meta name="theme-color" content="#f6f5f1">
+  <link rel="canonical" href="https://stella24603.github.io/notes/tracing-a-for-loop.html">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:title" content="How to trace a for loop, line by line | Ayan &quot;Kuro&quot; Mandal">
+  <meta property="og:description" content="A calm way to get the right output on exam questions: trace the loop on paper, one row per pass, using a small Python example.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://stella24603.github.io/notes/tracing-a-for-loop.html">
+  <meta property="og:image" content="https://stella24603.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ayan Kuro Mandal: I teach logic and build with AI. Web developer, Data Science student, CS educator.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="../assets/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-tight-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script>document.documentElement.classList.add("js");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js-motion")</script>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to trace a for loop, line by line","datePublished":"2026-10-13","dateModified":"2026-10-13","author":{"@type":"Person","name":"Ayan Mandal","alternateName":"Kuro","url":"https://stella24603.github.io/"},"mainEntityOfPage":"https://stella24603.github.io/notes/tracing-a-for-loop.html"}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">
+        <span class="monogram" aria-hidden="true">AK</span>
+        <span>Ayan Mandal</span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#ai">How I build</a>
+        <a href="../index.html#journey">Journey</a>
+        <a href="../index.html#teaching">Teaching</a>
+        <a href="../index.html#logic-room">The Logic Room</a>
+        <a href="../notes/">Notes</a>
+        <a href="../index.html#faq">FAQ</a>
+      </nav>
+      <button type="button" class="btn btn-sm jump-btn" aria-haspopup="dialog" aria-keyshortcuts="/">Jump <kbd aria-hidden="true">/</kbd></button>
+      <a class="btn btn-sm btn-primary nav-cta" href="../index.html#contact">Get in touch</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <section class="cs-hero">
+        <div class="wrap">
+          <a class="back" href="index.html">&larr; All notes</a>
+          <p class="mono" style="margin-top:24px">Python &middot; Exam tips</p>
+          <h1>How to trace a for loop, line by line</h1>
+          <dl class="cs-meta">
+            <div><dt class="mono">Published</dt><dd><time datetime="2026-10-13">13 October 2026</time></dd></div>
+            <div><dt class="mono">Reading time</dt><dd>3 minutes</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="wrap cs-body post-body">
+        <section>
+          <h2>The problem</h2>
+          <p>Most &ldquo;what is the output?&rdquo; questions go wrong for one reason: we read the code like a sentence instead of running it like a machine. The fix is simple. Trace it on paper, one pass at a time.</p>
+          <p>Here is a question in the style of the HS 2026 Semester 3 COMS paper. What does this print?</p>
+          <pre><code>for letter in "Computer Science":
+    if letter == "e":
+        continue
+    print(letter, end="")</code></pre>
+        </section>
+
+        <section>
+          <h2>Three rules for tracing</h2>
+          <ol>
+            <li><strong>One row per pass.</strong> The loop variable takes one new value each time. Give each value its own row.</li>
+            <li><strong>Check the condition before you act.</strong> Decide whether <code>letter == "e"</code> is true first, then follow the branch it chooses.</li>
+            <li><strong>Know what <code>continue</code> does.</strong> It skips the rest of this pass and jumps to the next letter. It does not stop the loop.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>The trace</h2>
+          <p>Here <code>end=""</code> means nothing is added after each letter, so everything prints on one line. In the last column, <code>_</code> stands for the space in the text.</p>
+          <pre><code>letter   is it "e"?     printed so far
+C        no             C
+o        no             Co
+m        no             Com
+p        no             Comp
+u        no             Compu
+t        no             Comput
+e        yes, skip      Comput
+r        no             Computr
+(space)  no             Computr_
+S        no             Computr_S
+c        no             Computr_Sc
+i        no             Computr_Sci
+e        yes, skip      Computr_Sci
+n        no             Computr_Scin
+c        no             Computr_Scinc
+e        yes, skip      Computr_Scinc</code></pre>
+          <p>The output is <code>Computr Scinc</code>. Every lowercase <code>e</code> is gone, and nothing else is.</p>
+        </section>
+
+        <section>
+          <h2>Check yourself</h2>
+          <p>Change <code>continue</code> to <code>break</code>. What prints now? Trace it the same way: the loop runs normally until the first <code>e</code>, then stops completely. The output is <code>Comput</code>.</p>
+          <p>Now delete <code>end=""</code> from the print line. Each letter is printed on its own line, because <code>print</code> adds a new line by default.</p>
+        </section>
+
+        <section>
+          <h2>The habit to keep</h2>
+          <p>When you are unsure, do not guess from the shape of the code. Draw the table. It takes a minute, and it turns a confusing question into sixteen small, easy ones.</p>
+          <p>I explain the whole paper, with the reasoning for every question, in <a href="https://youtu.be/U9DQnI8sbac" target="_blank" rel="noopener">this video on The Logic Room</a>.</p>
+        </section>
+
+        <div class="cs-next">
+          <a href="index.html">&larr; All notes</a>
+          <a href="../index.html#contact">Get in touch &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="colophon">
+        <p class="mono">Colophon</p>
+        <p>Built with plain HTML, CSS and JavaScript, hosted on GitHub Pages, designed and written with help from AI. <a href="https://github.com/Stella24603/stella24603.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+      </div>
+      <div class="footer-links">
+        <a class="social" href="https://www.linkedin.com/in/ayan-mandal-cs/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a class="social" href="https://github.com/Stella24603" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)" title="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+        <a class="social" href="https://www.youtube.com/@TheLogicRoom-0b1b" target="_blank" rel="noopener" aria-label="YouTube (opens in a new tab)" title="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+        <a class="social" href="https://www.instagram.com/thelogicroom_" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)" title="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+        <a class="footer-site" href="https://www.ganitasastram.com" target="_blank" rel="noopener">Ganitasastram &#8599;</a>
+      </div>
+    </div>
+    <p class="wrap copyright mono">&copy; <span id="year">2026</span> Ayan &ldquo;Kuro&rdquo; Mandal</p>
+  </footer>
+  <script src="../js/vendor/gsap.min.js" defer></script>
+  <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/localtime.js" defer></script>
+  <script src="../js/motion.js" defer></script>
+  <script src="../js/jumpbar.js" defer></script>
+</body>
+</html>

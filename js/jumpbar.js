@@ -10,6 +10,7 @@
     { k: "teaching", id: "teaching", d: "Teaching" },
     { k: "logic-room", id: "logic-room", d: "The Logic Room" },
     { k: "journey", id: "journey", d: "Journey and certifications" },
+    { k: "notes", id: "notes", d: "Notes" },
     { k: "contact", id: "contact", d: "Get in touch" }
   ];
   var onHome = !!document.getElementById("work");
@@ -22,7 +23,7 @@
   dlg.innerHTML =
     '<div class="jump-inner">' +
       '<label class="jump-row"><span class="jump-prompt" aria-hidden="true">kuro@portfolio ~ $</span>' +
-      '<input class="jump-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Type a command: web, teaching, logic-room, journey or contact"></label>' +
+      '<input class="jump-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Type a command: web, teaching, logic-room, journey, notes or contact"></label>' +
       '<ul class="jump-list"></ul>' +
       '<p class="jump-status mono" role="status" aria-live="polite"></p>' +
       '<p class="jump-hint mono">Enter to go &middot; Esc to close</p>' +

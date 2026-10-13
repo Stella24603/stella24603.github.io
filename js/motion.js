@@ -19,7 +19,7 @@
     var LINE_TARGETS = ".hero-line, .section-head h2, .cs-hero h1";
     var FADE_TARGETS = [
       ".work-row", ".work-more", ".steps li", ".timeline li", ".cert", ".facts div",
-      ".card", ".lr-card", ".lr-links", ".faq details", ".contact-grid .form",
+      ".card", ".lr-card", ".lr-links", ".note-row", ".faq details", ".contact-grid .form",
       ".contact-side", ".cs-body section"
     ].join(",");
 
@@ -55,7 +55,7 @@
     var mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", function () {
       var small = window.matchMedia("(max-width: 799px)").matches;
-      var dur = small ? 0.5 : 0.8;
+      var dur = small ? 1.25 : 1.2;   // slower on purpose: small screens need longer to be noticed
 
       // 1. Masked line reveals
       var lineEls = Array.prototype.slice.call(document.querySelectorAll(LINE_TARGETS));
@@ -70,7 +70,7 @@
 
       // 2. Staggered fades (set start state, reveal in batches as they scroll in)
       var fadeEls = gsap.utils.toArray(FADE_TARGETS);
-      gsap.set(fadeEls, { opacity: 0, y: small ? 10 : 16 });
+      gsap.set(fadeEls, { opacity: 0, y: small ? 36 : 44 });
 
       // Everything is now in its start state: drop the CSS fail-open.
       root.classList.add("js-ready");
@@ -79,7 +79,7 @@
         var play = function () {
           gsap.to(j.inners, {
             yPercent: 0, duration: dur, ease: "power3.out",
-            delay: function (i, t) { return t.parentNode._line * 0.09; }
+            delay: function (i, t) { return t.parentNode._line * 0.16 + i * 0.012; }
           });
         };
         if (j.el.matches(".hero-line") || idx === 0) { play(); }
@@ -87,9 +87,9 @@
       });
 
       ScrollTrigger.batch(fadeEls, {
-        start: "top 90%", once: true,
+        start: "top 92%", once: true,
         onEnter: function (batch) {
-          gsap.to(batch, { opacity: 1, y: 0, duration: small ? 0.45 : 0.65, ease: "power2.out", stagger: 0.08, overwrite: true });
+          gsap.to(batch, { opacity: 1, y: 0, duration: small ? 1.15 : 1.1, ease: "power3.out", stagger: 0.14, overwrite: true });
         }
       });
 
