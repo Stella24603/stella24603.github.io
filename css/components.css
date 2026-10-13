@@ -7,7 +7,7 @@
 .monogram {
   display: grid; place-items: center; width: 36px; height: 36px;
   border: 1px solid var(--ink); border-radius: var(--radius);
-  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; letter-spacing: 0;
+  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 400; letter-spacing: 0;
 }
 .nav-links { display: flex; flex-wrap: wrap; gap: 4px 20px; order: 3; width: 100%; font-size: var(--fs-small); }
 .nav-links a { text-decoration: none; color: var(--muted); padding-block: 4px; }
@@ -70,7 +70,7 @@
 .work-row .arrow { font-family: var(--font-mono); color: var(--muted); transition: transform .15s, color .15s; }
 .work-row:hover .arrow { transform: translateX(4px); color: var(--accent); }
 .meta { display: grid; gap: 4px; font-size: var(--fs-small); color: var(--muted); }
-.meta b { font-family: var(--font-mono); font-size: var(--fs-mono); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--ink); margin-right: 8px; }
+.meta b { font-family: var(--font-mono); font-size: var(--fs-mono); font-weight: 400; letter-spacing: .04em; text-transform: uppercase; color: var(--ink); margin-right: 8px; }
 .work-more { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; font-size: var(--fs-small); color: var(--muted); }
 .tag { font-family: var(--font-mono); font-size: var(--fs-mono); border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 2px 10px; color: var(--muted); }
 
@@ -203,6 +203,12 @@
 
 /* ---------- jump bar ---------- */
 .jump-btn { order: 2; gap: 6px; }
+html:not(.js) .jump-btn { visibility: hidden; } /* keeps its space without JS; no dead button */
+@media (max-width: 599px) {
+  .nav { gap: 8px 12px; }
+  .jump-btn kbd { display: none; }          /* no "/" key on phones */
+  .corner-info { flex-direction: column; align-items: flex-start; } /* clock text can change without re-wrapping */
+}
 .jump-btn kbd { font-family: var(--font-mono); font-size: .72rem; border: 1px solid var(--hairline-strong); border-radius: 3px; padding: 0 5px; color: var(--muted); }
 .jump { border: 1px solid var(--ink); border-radius: var(--radius); padding: 0; background: var(--paper); color: var(--ink); width: min(560px, calc(100vw - 32px)); margin: 12vh auto 0; }
 .jump::backdrop { background: rgba(18, 18, 18, .35); }

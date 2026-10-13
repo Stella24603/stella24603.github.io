@@ -2,7 +2,8 @@
 // It is an enhancement: every section stays reachable through the normal nav.
 (function () {
   var dlg = document.createElement("dialog");
-  if (typeof dlg.showModal !== "function") return;
+  var btn = document.querySelector(".jump-btn");
+  if (typeof dlg.showModal !== "function") { if (btn) btn.remove(); return; }
 
   var COMMANDS = [
     { k: "web", id: "work", d: "Selected work" },
@@ -92,16 +93,8 @@
   // Clicking the backdrop (the dialog element itself) closes it.
   dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
 
-  // Nav button
-  var cta = document.querySelector(".nav-cta");
-  if (cta && cta.parentNode) {
-    var btn = document.createElement("button");
-    btn.type = "button"; btn.className = "btn btn-sm jump-btn";
-    btn.setAttribute("aria-haspopup", "dialog"); btn.setAttribute("aria-keyshortcuts", "/");
-    btn.innerHTML = 'Jump <kbd aria-hidden="true">/</kbd>';
-    btn.addEventListener("click", open);
-    cta.parentNode.insertBefore(btn, cta);
-  }
+  // Nav button lives in the HTML (so the header never changes size); we only bind it here.
+  if (btn) btn.addEventListener("click", open);
 
   // "/" opens it, unless the user is typing somewhere.
   document.addEventListener("keydown", function (e) {
