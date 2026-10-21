@@ -173,7 +173,7 @@
 .field label { font-size: var(--fs-small); font-weight: 500; }
 .field .opt { color: var(--muted); font-weight: 400; }
 .field input, .field select, .field textarea {
-  font: inherit; color: var(--ink); background: #fff;
+  font: inherit; color: var(--ink); background: var(--field);
   border: 1px solid var(--hairline-strong); border-radius: var(--radius);
   padding: 12px 14px; width: 100%;
 }
@@ -182,7 +182,7 @@
 .form-note { font-size: var(--fs-small); color: var(--muted); }
 .form-status { min-height: 1.5em; font-size: var(--fs-small); }
 .form-status.ok { color: var(--accent); }
-.form-status.err { color: #a12a2a; }
+.form-status.err { color: var(--danger); }
 .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .contact-side { display: grid; gap: 16px; align-content: start; color: var(--ink); }
 .contact-art { width: 100%; max-width: 460px; height: auto; display: block; border: 1px solid var(--hairline); border-radius: var(--radius); background: var(--paper-2); }
@@ -260,17 +260,18 @@ html:not(.js) .jump-btn { visibility: hidden; } /* keeps its space without JS; n
 .jump-item:hover, .jump-item:focus-visible { background: var(--paper-2); }
 .jump-cmd { font-family: var(--font-mono); font-size: .9rem; }
 .jump-desc { color: var(--muted); font-size: var(--fs-small); }
-.jump-status { min-height: 1.3em; text-transform: none; letter-spacing: 0; color: #a12a2a; }
+.jump-status { min-height: 1.3em; text-transform: none; letter-spacing: 0; color: var(--danger); }
 .jump-hint { text-transform: none; }
 
 /* ---------- mobile menu ---------- */
-/* Below 860px the section links collapse behind a menu button, so the sticky header stays one row.
+/* Below 1080px (the width the inline links, Jump, theme toggle and button need, plus a scrollbar) the section links collapse
+   behind a menu button, so the sticky header stays one row.
    Without JS (no html.js) the links stay in view as a wrapped row, as before. */
 .menu-btn { display: none; order: 4; width: 40px; height: 40px; padding: 0; justify-content: center; }
 .menu-btn svg { display: block; }
 .menu-btn .i-close, .menu-btn[aria-expanded="true"] .i-open { display: none; }
 .menu-btn[aria-expanded="true"] .i-close { display: inline; }
-@media (max-width: 859px) {
+@media (max-width: 1079px) {
   .js .menu-btn { display: inline-flex; }
   .js .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0; order: 0; width: auto;
@@ -291,6 +292,24 @@ html:not(.js) .jump-btn { visibility: hidden; } /* keeps its space without JS; n
   /* keeps brand, call to action and menu on one row; the name stays available to screen readers */
   .js .brand > span:not(.monogram) { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
+
+/* ---------- theme toggle ---------- */
+/* Header icon button; on phones (under 600px) the same switch moves into the menu panel instead. */
+.theme-btn { order: 2; width: 40px; height: 40px; padding: 0; justify-content: center; }
+.theme-btn svg { display: block; }
+.theme-btn .i-sun, html[data-theme="dark"] .theme-btn .i-moon { display: none; }
+html[data-theme="dark"] .theme-btn .i-sun { display: inline; }
+.theme-row { display: none; }
+html:not(.js) .theme-btn { display: none; }
+@media (max-width: 599px) {
+  .menu-btn ~ .theme-btn { display: none; }
+  .js .theme-row {
+    display: flex; align-items: center; width: 100%; padding: 14px 0;
+    font: inherit; font-size: 1.1rem; color: var(--ink); background: none; border: 0; cursor: pointer; text-align: left;
+  }
+}
+/* the white notes page and thumbnails are easier on the eyes when slightly dimmed in the dark theme */
+html[data-theme="dark"] :is(.card-preview, .lr-thumb) img { filter: brightness(0.9); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
