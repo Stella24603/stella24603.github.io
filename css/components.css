@@ -263,6 +263,35 @@ html:not(.js) .jump-btn { visibility: hidden; } /* keeps its space without JS; n
 .jump-status { min-height: 1.3em; text-transform: none; letter-spacing: 0; color: #a12a2a; }
 .jump-hint { text-transform: none; }
 
+/* ---------- mobile menu ---------- */
+/* Below 860px the section links collapse behind a menu button, so the sticky header stays one row.
+   Without JS (no html.js) the links stay in view as a wrapped row, as before. */
+.menu-btn { display: none; order: 4; width: 40px; height: 40px; padding: 0; justify-content: center; }
+.menu-btn svg { display: block; }
+.menu-btn .i-close, .menu-btn[aria-expanded="true"] .i-open { display: none; }
+.menu-btn[aria-expanded="true"] .i-close { display: inline; }
+@media (max-width: 859px) {
+  .js .menu-btn { display: inline-flex; }
+  .js .nav-links {
+    display: none; position: absolute; top: 100%; left: 0; right: 0; order: 0; width: auto;
+    flex-direction: column; flex-wrap: nowrap; gap: 0;
+    padding: 4px var(--gutter) 12px;
+    max-height: calc(100vh - 72px); overflow-y: auto;
+    background: var(--paper); border-bottom: 1px solid var(--hairline-strong);
+    font-size: 1.1rem;
+  }
+  .js .nav-links.open { display: flex; }
+  .js .nav-links a { color: var(--ink); padding: 14px 0; border-bottom: 1px solid var(--hairline); }
+  .js .nav-links a:last-child { border-bottom: 0; }
+}
+@media (max-width: 599px) {
+  .jump-btn { display: none; }              /* the menu lists the same sections; no "/" key on phones */
+}
+@media (max-width: 359px) {
+  /* keeps brand, call to action and menu on one row; the name stays available to screen readers */
+  .js .brand > span:not(.monogram) { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
