@@ -51,6 +51,7 @@
 
   function go(c) {
     dlg.close();
+    if (c.id === "contact" && onHome) { window.dispatchEvent(new Event("open-contact")); return; }
     if (!onHome) { window.location.href = indexHref + "#" + c.id; return; }
     var t = document.getElementById(c.id);
     if (!t) return;

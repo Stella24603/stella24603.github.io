@@ -16,7 +16,7 @@
 
     // Honeypot: bots tick the hidden checkbox. Pretend success, send nothing.
     if (form.elements.botcheck && form.elements.botcheck.checked) {
-      show("Thanks, I’ll get back to you soon.", "ok");
+      show("Thanks, I’ll reply soon.", "ok");
       return;
     }
 
@@ -43,7 +43,7 @@
       .then(function (r) {
         if (r.ok && r.json.success) {
           form.reset();
-          show("Thanks, I’ll get back to you soon.", "ok");
+          show("Thanks, I’ll reply soon.", "ok");
         } else {
           throw new Error("rejected");
         }

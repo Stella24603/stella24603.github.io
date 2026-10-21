@@ -6,7 +6,7 @@
   try {
     fmt = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Kolkata" });
   } catch (e) { return; }
-  function tick() { el.textContent = "Kolkata, India · " + fmt.format(new Date()) + " IST"; }
+  function tick() { el.textContent = "Kolkata · " + fmt.format(new Date()) + " IST"; }
   tick();
   setInterval(tick, 30000);
 })();

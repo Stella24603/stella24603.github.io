@@ -18,13 +18,12 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Ayan Kuro Mandal: I teach logic and build with AI. Web developer, Data Science student, CS educator.">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preload" href="../assets/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../assets/fonts/inter-tight-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/hanken-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/bricolage-grotesque-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <script>try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);if(t==="dark"){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content","#131512")}}catch(e){};document.documentElement.classList.add("js");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js-motion")</script>
-  <link rel="stylesheet" href="../css/tokens.css?v=2">
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/tokens.css?v=20261022">
+  <link rel="stylesheet" href="../css/base.css?v=20261022">
+  <link rel="stylesheet" href="../css/components.css?v=20261022">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to trace a for loop, line by line","datePublished":"2026-10-13","dateModified":"2026-10-13","author":{"@type":"Person","name":"Ayan Mandal","alternateName":"Kuro","url":"https://stella24603.github.io/"},"mainEntityOfPage":"https://stella24603.github.io/notes/tracing-a-for-loop.html"}</script>
 </head>
 <body>
@@ -81,7 +80,7 @@
           <h2>Three rules for tracing</h2>
           <ol>
             <li><strong>One row per pass.</strong> The loop variable takes one new value each time. Give each value its own row.</li>
-            <li><strong>Check the condition before you act.</strong> Decide whether <code>letter == "e"</code> is true first, then follow the branch it chooses.</li>
+            <li><strong>Check the condition before acting.</strong> Decide whether <code>letter == "e"</code> is true first, then follow the branch it chooses.</li>
             <li><strong>Know what <code>continue</code> does.</strong> It skips the rest of this pass and jumps to the next letter. It does not stop the loop.</li>
           </ol>
         </section>
@@ -110,14 +109,14 @@ e        yes, skip      Computr_Scinc</code></pre>
         </section>
 
         <section>
-          <h2>Check yourself</h2>
+          <h2>A quick check</h2>
           <p>Change <code>continue</code> to <code>break</code>. What prints now? Trace it the same way: the loop runs normally until the first <code>e</code>, then stops completely. The output is <code>Comput</code>.</p>
           <p>Now delete <code>end=""</code> from the print line. Each letter is printed on its own line, because <code>print</code> adds a new line by default.</p>
         </section>
 
         <section>
           <h2>The habit to keep</h2>
-          <p>When you are unsure, do not guess from the shape of the code. Draw the table. It takes a minute, and it turns a confusing question into sixteen small, easy ones.</p>
+          <p>When I am unsure, I do not guess from the shape of the code. I draw the table. It takes a minute, and it turns a confusing question into sixteen small, easy ones.</p>
           <p>I explain the whole paper, with the reasoning for every question, in <a href="https://youtu.be/U9DQnI8sbac" target="_blank" rel="noopener">this video on The Logic Room</a>.</p>
         </section>
 
@@ -147,9 +146,9 @@ e        yes, skip      Computr_Scinc</code></pre>
   </footer>
   <script src="../js/vendor/gsap.min.js" defer></script>
   <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="../js/main.js?v=2" defer></script>
-  <script src="../js/localtime.js" defer></script>
-  <script src="../js/motion.js" defer></script>
-  <script src="../js/jumpbar.js" defer></script>
+  <script src="../js/main.js?v=20261022" defer></script>
+  <script src="../js/localtime.js?v=20261022" defer></script>
+  <script src="../js/motion.js?v=20261022" defer></script>
+  <script src="../js/jumpbar.js?v=20261022" defer></script>
 </body>
 </html>

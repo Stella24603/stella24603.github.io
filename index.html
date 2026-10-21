@@ -21,13 +21,13 @@
   <meta property="og:image:alt" content="Ayan Kuro Mandal: I teach logic and build with AI. Web developer, Data Science student, CS educator.">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="preload" href="assets/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/inter-tight-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/hanken-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <script>try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);if(t==="dark"){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content","#131512")}}catch(e){};document.documentElement.classList.add("js");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js-motion")</script>
-  <link rel="stylesheet" href="css/tokens.css?v=2">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css?v=2">
+  <script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&!location.hash&&!sessionStorage.getItem("booted"))document.documentElement.classList.add("booting")}catch(e){}</script>
+  <link rel="stylesheet" href="css/tokens.css?v=20261022">
+  <link rel="stylesheet" href="css/base.css?v=20261022">
+  <link rel="stylesheet" href="css/components.css?v=20261022">
 
   <script type="application/ld+json">
   {
@@ -52,8 +52,27 @@
   </script>
 </head>
 <body>
+  <div class="boot" id="boot" aria-hidden="true">
+    <svg viewBox="-30 0 180 190" focusable="false">
+      <defs><clipPath id="b-clip"><rect class="b-clip" x="61" y="148" width="145" height="24"/></clipPath></defs>
+      <g class="b-logi">
+        <path class="b-door" d="M20 120V54A40 40 0 0 1 100 54V120Z"/>
+        <rect class="b-floor" x="8" y="122" width="104" height="9" rx="4.5"/>
+        <g class="b-eye"><circle class="b-white" cx="46" cy="56" r="12.5"/><g class="b-look"><circle class="b-pupil" cx="46" cy="56" r="6"/></g></g>
+        <g class="b-eye"><circle class="b-white" cx="74" cy="56" r="12.5"/><g class="b-look"><circle class="b-pupil" cx="74" cy="56" r="6"/></g></g>
+        <path class="b-sweat" d="M106 30c3 5 6 8 6 12a6 6 0 0 1-12 0c0-4 3-7 6-12z"/>
+      </g>
+      <g class="b-mouth-g">
+        <path class="b-mouth" d="M42 84L54 92L42 100"/>
+        <rect class="b-cursor" x="61" y="97" width="9" height="5" rx="2.5"/>
+      </g>
+      <text class="b-text" x="61" y="166" clip-path="url(#b-clip)">loading portfolio...</text>
+    </svg>
+  </div>
+
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="topbar"><div class="wrap topbar-in"><span class="topbar-status"><i aria-hidden="true"></i>open-to-opportunities/</span><span id="localtime" aria-label="Local time in India">Kolkata &middot; IST</span></div></div>
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#top">
@@ -72,7 +91,7 @@
         <button type="button" class="theme-row" aria-label="Switch to dark mode"><span class="theme-row-label">Dark mode</span></button>
       </nav>
       <button type="button" class="btn btn-sm jump-btn" aria-haspopup="dialog" aria-keyshortcuts="/">Jump <kbd aria-hidden="true">/</kbd></button>
-      <a class="btn btn-sm btn-primary nav-cta" href="#contact">Get in touch</a>
+      <a class="btn btn-sm btn-primary nav-cta" href="#contact" data-open-contact>Get in touch</a>
       <button type="button" class="btn btn-sm theme-btn" aria-label="Switch to dark mode"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="i-moon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/><g class="i-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
     </div>
   </header>
@@ -82,45 +101,34 @@
     <!-- 1. HERO -->
     <section class="hero" id="top">
       <div class="wrap">
-        <div class="corner-info mono">
-          <span class="badge">Open to opportunities</span>
-          <span id="localtime" aria-label="Local time in India">Kolkata, India (IST)</span>
-        </div>
+        <p class="hero-name">Ayan &ldquo;Kuro&rdquo; Mandal</p>
+        <h1 class="hero-line">I teach logic and <em>build with AI.</em></h1>
 
-        <div class="hero-name">
-          <span class="monogram" aria-hidden="true">AK</span>
-          <h1>Ayan &ldquo;Kuro&rdquo; Mandal</h1>
-        </div>
-        <p class="hero-line">I teach logic and <em>build with AI.</em></p>
-        <p class="hero-caption mono">Web developer · Data Science student (IIT Madras) · CS educator</p>
-        <p class="hero-intro">I build web apps for classrooms and teach computer science to school students. I co-founded Ganitasastram, and I&rsquo;m studying Data Science at IIT Madras.</p>
+        <div class="hero-row">
+          <div>
+            <p class="hero-caption">Web developer &middot; Data Science student (IIT Madras) &middot; CS educator</p>
+            <p class="hero-intro">I build web apps for classrooms and teach computer science to school students. I co-founded Ganitasastram, and I&rsquo;m studying Data Science at IIT Madras.</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#contact" data-open-contact>Get in touch</a>
+              <a class="btn" href="#work">See work</a>
+              <a class="link-quiet" href="https://www.ganitasastram.com/team/ayan-mandal" target="_blank" rel="noopener">Classes at Ganitasastram &#8599;</a>
+            </div>
+          </div>
 
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#contact">Get in touch</a>
-          <a class="btn" href="#work">See work</a>
-          <a class="link-quiet" href="https://www.ganitasastram.com/team/ayan-mandal" target="_blank" rel="noopener">Classes at Ganitasastram ↗</a>
+          <figure class="hero-work">
+            <a href="assets/samples/transmission-media-notes-excerpt.pdf" target="_blank" rel="noopener" aria-label="Open the sample study notes (PDF)">
+              <img src="assets/img/notes-transmission-media.webp" alt="A page from my Transmission Media study notes: a diagram classifying guided and unguided media, with English text and a Bengali explanation under each point" width="900" height="1273" fetchpriority="high" decoding="async">
+            </a>
+            <figcaption>A page from my Class XI Computer Networks notes: English first, Bengali below. <a href="assets/samples/transmission-media-notes-excerpt.pdf" target="_blank" rel="noopener">Open the sample &#8599;</a></figcaption>
+          </figure>
         </div>
       </div>
-
-      <!-- notebook doodle: logic gate into a flowchart box -->
-      <svg class="hero-doodle" viewBox="0 0 300 200" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-        <path d="M20 60h50M20 100h50"/>
-        <path d="M70 40h30a40 40 0 0 1 0 80H70z"/>
-        <path d="M140 80h40"/>
-        <rect x="180" y="55" width="90" height="50" rx="4"/>
-        <path d="M225 105v30"/>
-        <path d="M225 135l-8-10M225 135l8-10"/>
-        <text x="204" y="85" font-family="JetBrains Mono, monospace" font-size="11" fill="currentColor" stroke="none">true</text>
-        <text x="28" y="54" font-family="JetBrains Mono, monospace" font-size="10" fill="currentColor" stroke="none">A</text>
-        <text x="28" y="94" font-family="JetBrains Mono, monospace" font-size="10" fill="currentColor" stroke="none">B</text>
-      </svg>
     </section>
 
     <!-- 2. SELECTED WORK -->
     <section class="section" id="work">
       <div class="wrap">
         <div class="section-head">
-          <p class="mono"><b>01</b> Selected work</p>
           <h2>Things I&rsquo;ve built and taught.</h2>
         </div>
 
@@ -181,10 +189,10 @@
     <section class="section" id="ai">
       <div class="wrap">
         <div class="section-head">
-          <p class="mono"><b>02</b> Process</p>
           <h2>How I build with AI</h2>
         </div>
         <p class="manifesto">I bring the problem, the context and the resources. AI restructures them and drafts the files. I decide what goes in, check every output, and test it before anyone else uses it.</p>
+        <div class="process-diagram"><svg class="diagram pd-wide" viewBox="0 0 820 200" role="img" aria-labelledby="pd-t pd-d" focusable="false"><title id="pd-t">How I build with AI</title><desc id="pd-d">Define the problem, AI drafts the files, I review every output, test on real cases, then ship to students. A failed test sends me back to review.</desc><g class="pd-step"><rect class="node" x="0" y="24" width="140" height="80" rx="6"/><text class="" x="16" y="60" font-size="18" font-weight="500">Define</text><text class="t-sub" x="16" y="82" font-size="13">I set the problem</text></g><g class="pd-arrow"><path class="link" d="M144 64H160"/><path class="head" d="M168 64l-10 -6v12z"/></g><g class="pd-step"><rect class="node-key" x="170" y="24" width="140" height="80" rx="6"/><text class="t-key" x="186" y="60" font-size="18" font-weight="500">Draft</text><text class="t-key-sub" x="186" y="82" font-size="13">AI drafts the files</text></g><g class="pd-arrow"><path class="link" d="M314 64H330"/><path class="head" d="M338 64l-10 -6v12z"/></g><g class="pd-step"><rect class="node" x="340" y="24" width="140" height="80" rx="6"/><text class="" x="356" y="60" font-size="18" font-weight="500">Review</text><text class="t-sub" x="356" y="82" font-size="13">I check every output</text></g><g class="pd-arrow"><path class="link" d="M484 64H500"/><path class="head" d="M508 64l-10 -6v12z"/></g><g class="pd-step"><rect class="node" x="510" y="24" width="140" height="80" rx="6"/><text class="" x="526" y="60" font-size="18" font-weight="500">Test</text><text class="t-sub" x="526" y="82" font-size="13">on real cases</text></g><g class="pd-arrow"><path class="link" d="M654 64H670"/><path class="head" d="M678 64l-10 -6v12z"/></g><g class="pd-step"><rect class="node" x="680" y="24" width="140" height="80" rx="6"/><text class="" x="696" y="60" font-size="18" font-weight="500">Ship</text><text class="t-sub" x="696" y="82" font-size="13">to students</text></g><g class="pd-loop"><path class="link link-key" d="M580 108V160H410V116"/><path class="head head-key" d="M410 108l-6 10h12z"/><text class="t-sub" x="495" y="186" font-size="14" text-anchor="middle">If it fails: fix it and test again</text></g></svg><svg class="diagram pd-tall" viewBox="0 0 300 496" role="img" aria-label="Define the problem, AI drafts the files, I review every output, test on real cases, then ship. A failed test sends me back to review." focusable="false"><g class="pd-step"><rect class="node" x="0" y="0" width="220" height="64" rx="6"/><text class="" x="16" y="28" font-size="17" font-weight="500">Define</text><text class="t-sub" x="16" y="50" font-size="13">I set the problem</text></g><g class="pd-arrow"><path class="link" d="M110 64V92"/><path class="head" d="M110 104l-6 -10h12z"/></g><g class="pd-step"><rect class="node-key" x="0" y="108" width="220" height="64" rx="6"/><text class="t-key" x="16" y="136" font-size="17" font-weight="500">Draft</text><text class="t-key-sub" x="16" y="158" font-size="13">AI drafts the files</text></g><g class="pd-arrow"><path class="link" d="M110 172V200"/><path class="head" d="M110 212l-6 -10h12z"/></g><g class="pd-step"><rect class="node" x="0" y="216" width="220" height="64" rx="6"/><text class="" x="16" y="244" font-size="17" font-weight="500">Review</text><text class="t-sub" x="16" y="266" font-size="13">I check every output</text></g><g class="pd-arrow"><path class="link" d="M110 280V308"/><path class="head" d="M110 320l-6 -10h12z"/></g><g class="pd-step"><rect class="node" x="0" y="324" width="220" height="64" rx="6"/><text class="" x="16" y="352" font-size="17" font-weight="500">Test</text><text class="t-sub" x="16" y="374" font-size="13">on real cases</text></g><g class="pd-arrow"><path class="link" d="M110 388V416"/><path class="head" d="M110 428l-6 -10h12z"/></g><g class="pd-step"><rect class="node" x="0" y="432" width="220" height="64" rx="6"/><text class="" x="16" y="460" font-size="17" font-weight="500">Ship</text><text class="t-sub" x="16" y="482" font-size="13">to students</text></g><g class="pd-loop"><path class="link link-key" d="M224 346H262V238H228"/><path class="head head-key" d="M222 238l10 -6v12z"/><text class="t-sub" font-size="13" transform="translate(284 292) rotate(-90)" text-anchor="middle">fix and test again</text></g></svg></div>
         <ol class="steps">
           <li>
             <h3>Define the problem</h3>
@@ -206,7 +214,6 @@
     <section class="section" id="journey">
       <div class="wrap">
         <div class="section-head">
-          <p class="mono"><b>03</b> Journey</p>
           <h2>Where I&rsquo;ve been, and where I&rsquo;m headed.</h2>
         </div>
 
@@ -261,17 +268,16 @@
     <section class="section" id="teaching">
       <div class="wrap">
         <div class="section-head">
-          <p class="mono"><b>04</b> Teaching</p>
           <h2>Clear explanations, built for school students.</h2>
         </div>
 
-        <dl class="facts">
-          <div><dt class="mono">Experience</dt><dd>5+ years of teaching</dd></div>
-          <div><dt class="mono">Classes</dt><dd>5 to 12</dd></div>
-          <div><dt class="mono">Boards</dt><dd>WBCHSE, CBSE and ICSE</dd></div>
-          <div><dt class="mono">Languages</dt><dd>English and Bengali material</dd></div>
-          <div><dt class="mono">Also</dt><dd>Private coding sessions</dd></div>
-        </dl>
+        <div class="facts">
+          <div><p class="fact-n">5+</p><p class="fact-l">Years of teaching</p></div>
+          <div><p class="fact-n">5&ndash;12</p><p class="fact-l">Classes taught</p></div>
+          <div><p class="fact-n">3</p><p class="fact-l">Boards: WBCHSE, CBSE and ICSE</p></div>
+          <div><p class="fact-n">2</p><p class="fact-l">Languages: English and Bengali material</p></div>
+        </div>
+        <p class="facts-note">Also available: private coding sessions.</p>
 
         <div class="cards">
           <article class="card">
@@ -284,9 +290,13 @@
             <a href="assets/samples/transmission-media-notes-excerpt.pdf" target="_blank" rel="noopener">Open 4-page excerpt (PDF) ↗</a>
           </article>
           <article class="card">
-            <span class="tag">Study guide</span>
-            <h3>Pattern printing with loops</h3>
-            <p>A step-by-step C study guide for newcomers, built around the rows-and-columns model.</p>
+            <a class="card-preview" href="assets/samples/pattern-printing-guide.pdf" target="_blank" rel="noopener" aria-label="Open the sample Python study guide (PDF)">
+              <img src="assets/img/pattern-printing-guide.webp" alt="Cover of the Pattern Printing with Loops Python study guide: a star pyramid, the contents table and how to use the guide" width="900" height="1273" loading="lazy" decoding="async">
+            </a>
+            <span class="tag">Sample &middot; Python study guide</span>
+            <h3>Pattern printing with loops (Class XII, Python)</h3>
+            <p>A step-by-step Python guide built around the rows-and-columns model: from one line of stars to full pyramids. 8 pages and 17 practice questions with answers.</p>
+            <a href="assets/samples/pattern-printing-guide.pdf" target="_blank" rel="noopener">Open the 8-page sample (PDF) &#8599;</a>
           </article>
         </div>
       </div>
@@ -296,7 +306,6 @@
     <section class="section" id="logic-room">
       <div class="wrap">
         <div class="section-head">
-          <p class="mono"><b>05</b> The Logic Room</p>
           <h2>Computer science, explained step by step.</h2>
         </div>
 
@@ -352,7 +361,6 @@
     <section class="section" id="notes">
       <div class="wrap">
         <div class="section-head">
-          <p class="mono"><b>06</b> Notes</p>
           <h2>Short notes on computer science.</h2>
         </div>
         <div class="note-list">
@@ -373,119 +381,43 @@
     <section class="section" id="faq">
       <div class="wrap">
         <div class="section-head">
-          <p class="mono"><b>07</b> FAQ</p>
           <h2>Good questions.</h2>
         </div>
+        <div class="faq-grid">
         <div class="faq">
           <details>
-            <summary>What kind of roles are you looking for?</summary>
+            <summary>What kinds of roles am I looking for?</summary>
             <p>Open to computer-related roles: web development, data analysis and teaching. I like work where I build things and explain them clearly.</p>
           </details>
           <details>
-            <summary>What&rsquo;s your technical background?</summary>
-            <p>B.Sc. (Honours) in Computer Science; Python, C, C++, Java, SQL; React, Firebase and Wix Velo. Studying Data Science at IIT Madras.</p>
+            <summary>What is my technical background?</summary>
+            <p>I hold a B.Sc. (Honours) in Computer Science. I work in Python, C, C++, Java and SQL, and with React, Firebase and Wix Velo. I am now studying Data Science at IIT Madras.</p>
           </details>
           <details>
             <summary>Can I see the classroom app?</summary>
-            <p>It holds real student data, so it isn&rsquo;t public. I&rsquo;m glad to walk you through it on a call.</p>
+            <p>It holds real student data, so it isn&rsquo;t public. I&rsquo;m glad to demo it on a call.</p>
           </details>
           <details>
-            <summary>What languages do you teach in?</summary>
+            <summary>Which languages do I teach in?</summary>
             <p>English and Bengali.</p>
           </details>
           <details>
             <summary>How do I get in touch?</summary>
-            <p>Use the form on this page or message me on <a href="https://www.linkedin.com/in/ayan-mandal-cs/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+            <p>Click the little mascot in the corner to open the contact form, or message me on <a href="https://www.linkedin.com/in/ayan-mandal-cs/" target="_blank" rel="noopener">LinkedIn</a>.</p>
           </details>
         </div>
-      </div>
-    </section>
-
-    <!-- 8. GET IN TOUCH -->
-    <section class="section" id="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <div class="section-head">
-            <p class="mono"><b>08</b> Contact</p>
-            <h2>Get in touch</h2>
-            <p class="hero-intro" style="margin-top:0">I read every message. Your details are only used to reply to you.</p>
-          </div>
-
-          <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms access key: public by design; the destination email lives in the Web3Forms account, not here. -->
-            <input type="hidden" name="access_key" value="27b737c2-d21d-4a2e-8c43-ff262a069c63">
-            <input type="hidden" name="subject" value="New message from the portfolio site">
-            <input type="hidden" name="from_name" value="Portfolio contact form">
-            <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-            <div class="field">
-              <label for="f-name">Name</label>
-              <input id="f-name" name="name" type="text" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="f-phone">Contact number <span class="opt">(optional)</span></label>
-              <input id="f-phone" name="phone" type="tel" autocomplete="tel">
-            </div>
-            <div class="field">
-              <label for="f-topic">What would you like to talk about?</label>
-              <select id="f-topic" name="topic" required>
-                <option>Web development</option>
-                <option>Data analysis</option>
-                <option>Teaching</option>
-                <option>Something else</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="f-message">Message</label>
-              <textarea id="f-message" name="message" required></textarea>
-            </div>
-            <div>
-              <button class="btn btn-primary" type="submit">Send message</button>
-            </div>
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-
-        <div class="contact-side">
-          <svg class="contact-art" viewBox="0 0 320 400" aria-hidden="true" focusable="false">
-            <defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="currentColor" fill-opacity=".28"/></pattern></defs>
-            <rect width="320" height="400" fill="url(#dots)"/>
-            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M24 85H130M24 135H130"/>
-              <path d="M130 60H165A50 50 0 0 1 165 160H130Z" fill="var(--paper)"/>
-              <path d="M215 110H282" stroke="var(--accent)" stroke-width="2"/>
-            </g>
-            <g fill="var(--paper)" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="85" r="5"/><circle cx="24" cy="135" r="5"/></g>
-            <circle cx="288" cy="110" r="7" fill="var(--accent)"/>
-            <g font-size="11" fill="currentColor">
-              <text x="24" y="72">message</text><text x="24" y="122">details</text>
-              <text x="236" y="96" fill="var(--accent)">reply</text>
-              <text x="146" y="115" fill-opacity=".6">AND</text>
-            </g>
-            <rect x="16" y="214" width="288" height="26" fill="var(--accent)" fill-opacity=".14" transform="translate(0 112)"/>
-            <path d="M16 214H304M16 240H304" stroke="currentColor" stroke-opacity=".35"/>
-            <g font-size="11" fill="currentColor">
-              <text x="24" y="231" fill-opacity=".6">message</text><text x="124" y="231" fill-opacity=".6">details</text><text x="224" y="231" fill-opacity=".6">reply</text>
-              <text x="24" y="261">0</text><text x="124" y="261">0</text><text x="224" y="261">0</text>
-              <text x="24" y="287">1</text><text x="124" y="287">0</text><text x="224" y="287">0</text>
-              <text x="24" y="313">0</text><text x="124" y="313">1</text><text x="224" y="313">0</text>
-              <text x="24" y="339" fill="var(--accent)">1</text><text x="124" y="339" fill="var(--accent)">1</text><text x="224" y="339" fill="var(--accent)">1</text>
-            </g>
-            <path d="M16 348H304" stroke="currentColor" stroke-opacity=".35"/>
-            <text x="24" y="376" font-size="10" fill="currentColor" fill-opacity=".6">no message, no reply. send both.</text>
-          </svg>
-          <p class="contact-note">Prefer LinkedIn? <a href="https://www.linkedin.com/in/ayan-mandal-cs/" target="_blank" rel="noopener">Message me there</a>.</p>
-        </div>
-      </div>
+        <aside class="faq-aside">
+          <h3>Something not covered here?</h3>
+          <p>Ask me directly. I read every message and reply myself.</p>
+          <button type="button" class="btn btn-primary" data-open-contact>Open the contact form</button>
+        </aside>
+        </div></div>
     </section>
   </main>
 
   <!-- 9. COLOPHON / FOOTER -->
   <footer class="site-footer">
+    <div class="wrap"><p class="wordmark" aria-hidden="true">Kuro</p></div>
     <div class="wrap footer-grid">
       <div class="colophon">
         <p class="mono">Colophon</p>
@@ -502,12 +434,88 @@
     <p class="wrap copyright mono">© <span id="year">2026</span> Ayan &ldquo;Kuro&rdquo; Mandal</p>
   </footer>
 
+  <!-- Mascot + contact dialog -->
+  <div class="mascot" id="mascot">
+    <p class="mascot-bubble" role="status" aria-live="polite" hidden></p>
+    <button type="button" class="mascot-btn" aria-label="Get in touch: open the contact form" aria-haspopup="dialog">
+      <svg viewBox="0 0 120 140" aria-hidden="true" focusable="false">
+        <path class="m-body" d="M20 120V54A40 40 0 0 1 100 54V120Z"/>
+        <rect class="m-floor" x="8" y="122" width="104" height="9" rx="4.5"/>
+        <g class="m-eye"><circle class="m-white" cx="46" cy="56" r="12.5"/><circle class="m-pupil" cx="46" cy="56" r="6"/></g>
+        <g class="m-eye"><circle class="m-white" cx="74" cy="56" r="12.5"/><circle class="m-pupil" cx="74" cy="56" r="6"/></g>
+        <path class="m-mouth" d="M42 84L54 92L42 100"/>
+        <rect class="m-cursor" x="61" y="97" width="17" height="5" rx="2.5"/>
+      </svg>
+    </button>
+  </div>
+
+  <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="cd-title">
+    <div class="cd-inner">
+      <button type="button" class="cd-close" aria-label="Close"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="cd-main">
+        <h2 id="cd-title">Get in touch</h2>
+        <p>I read every message, and I use the details submitted only to reply.</p>
+        <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Web3Forms access key: public by design; the destination email lives in the Web3Forms account, not here. -->
+                    <input type="hidden" name="access_key" value="27b737c2-d21d-4a2e-8c43-ff262a069c63">
+                    <input type="hidden" name="subject" value="New message from the portfolio site">
+                    <input type="hidden" name="from_name" value="Portfolio contact form">
+                    <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        
+                    <div class="field">
+                      <label for="f-name">Name</label>
+                      <input id="f-name" name="name" type="text" autocomplete="name" required>
+                    </div>
+                    <div class="field">
+                      <label for="f-email">Email</label>
+                      <input id="f-email" name="email" type="email" autocomplete="email" required>
+                    </div>
+                    <div class="field">
+                      <label for="f-phone">Contact number <span class="opt">(optional)</span></label>
+                      <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+                    </div>
+                    <div class="field">
+                      <label for="f-topic">Topic</label>
+                      <select id="f-topic" name="topic" required>
+                        <option>Web development</option>
+                        <option>Data analysis</option>
+                        <option>Teaching</option>
+                        <option>Something else</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label for="f-message">Message</label>
+                      <textarea id="f-message" name="message" required></textarea>
+                    </div>
+                    <div>
+                      <button class="btn btn-primary" type="submit">Send message</button>
+                    </div>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                  </form>
+      </div>
+      <aside class="cd-side">
+        <h3>Or find me here</h3>
+        <div class="channels">
+          <a class="channel" href="https://www.linkedin.com/in/ayan-mandal-cs/" target="_blank" rel="noopener"><strong>LinkedIn &#8599;</strong><span>Best for roles and collaborations</span></a>
+          <a class="channel" href="https://github.com/Stella24603" target="_blank" rel="noopener"><strong>GitHub &#8599;</strong><span>Code and this site&rsquo;s source</span></a>
+          <a class="channel" href="https://www.youtube.com/@TheLogicRoom-0b1b" target="_blank" rel="noopener"><strong>YouTube &#8599;</strong><span>The Logic Room: lessons and exam solutions</span></a>
+          <a class="channel" href="https://www.instagram.com/thelogicroom_" target="_blank" rel="noopener"><strong>Instagram &#8599;</strong><span>Short updates from The Logic Room</span></a>
+        </div>
+      </aside>
+    </div>
+  </dialog>
+
+  <script src="js/boot.js?v=20261022" defer></script>
   <script src="js/vendor/gsap.min.js" defer></script>
   <script src="js/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="js/main.js?v=2" defer></script>
-  <script src="js/localtime.js" defer></script>
-  <script src="js/motion.js" defer></script>
-  <script src="js/jumpbar.js" defer></script>
-  <script src="js/contact.js" defer></script>
+  <script src="js/main.js?v=20261022" defer></script>
+  <script src="js/localtime.js?v=20261022" defer></script>
+  <script src="js/motion.js?v=20261022" defer></script>
+  <script src="js/jumpbar.js?v=20261022" defer></script>
+  <script src="js/fx.js?v=20261022" defer></script>
+  <script src="js/faq.js?v=20261022" defer></script>
+  <script src="js/trail.js?v=20261022" defer></script>
+  <script src="js/contact.js?v=20261022" defer></script>
+  <script src="js/mascot.js?v=20261022" defer></script>
 </body>
 </html>

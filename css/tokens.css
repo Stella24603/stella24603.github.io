@@ -1,32 +1,10 @@
 /* Design tokens: "The Logic Room Notebook" */
 
-@font-face {
-  font-family: "Inter Tight";
-  src: url("../assets/fonts/inter-tight-latin-400-normal.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Inter Tight";
-  src: url("../assets/fonts/inter-tight-latin-500-normal.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("../assets/fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Metric-matched fallbacks: the page lays out the same before and after the web fonts load,
-   so there is no text re-wrap (layout shift) when they arrive. Ratios measured against Arial. */
-@font-face { font-family: "Inter Tight Fallback"; src: local("Arial"), local("Helvetica Neue"), local("Liberation Sans"); font-weight: 400; size-adjust: 96.1%; }
-@font-face { font-family: "Inter Tight Fallback"; src: local("Arial"), local("Helvetica Neue"), local("Liberation Sans"); font-weight: 500; size-adjust: 98.3%; }
-@font-face { font-family: "JetBrains Mono Fallback"; src: local("Courier New"), local("Liberation Mono"); size-adjust: 100%; }
+@font-face { font-family: "Bricolage Grotesque"; src: url("../assets/fonts/bricolage-grotesque-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Bricolage Grotesque"; src: url("../assets/fonts/bricolage-grotesque-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("../assets/fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("../assets/fonts/hanken-grotesk-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("../assets/fonts/hanken-grotesk-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
 
 :root {
   /* colour */
@@ -43,15 +21,16 @@
   color-scheme: light;
 
   /* type: system fallbacks include Bengali-capable fonts */
-  --font-ui: "Inter Tight", "Inter Tight Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Bengali", "Nirmala UI", sans-serif;
-  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-ui: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Bengali", "Nirmala UI", sans-serif;
+  --font-display: "Bricolage Grotesque", "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Bengali", "Nirmala UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --fs-hero: clamp(2.5rem, 1.2rem + 6.5vw, 6.25rem);
   --fs-h2: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
   --fs-h3: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
   --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
-  --fs-small: 0.875rem;
-  --fs-mono: 0.78rem;
+  --fs-small: 0.9375rem;
+  --fs-mono: 0.9375rem;
 
   /* layout */
   --space: 8px;
